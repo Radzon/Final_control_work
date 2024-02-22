@@ -10,7 +10,7 @@
 string[] CreateArr()
 {
     System.Console.Write("Введите длину массива: ");
-    int arrLen = int.Parse(Console.ReadLine());
+    int arrLen = int.Parse(Console.ReadLine()!);
 
     string[] sArr = new string[arrLen];
 
@@ -18,7 +18,7 @@ string[] CreateArr()
     for (int i = 0; i < arrLen; i++)
     {
         System.Console.Write($"{i + 1}: ");
-        sArr[i] = Console.ReadLine();
+        sArr[i] = Console.ReadLine()!;
     }
     return sArr;
 }
@@ -39,8 +39,10 @@ string[] newArr = new string[CountingShortValue(Arr, 3)];
 int k = 0;
 for (int i = 0; i < Arr.Length; i++)
     if (Arr[i].Length <= 3)
+    {
         newArr[k] = Arr[i];
         k++;
+    }
 
 System.Console.WriteLine();
 System.Console.WriteLine("Результат работы программы:");
