@@ -32,3 +32,16 @@ int CountingShortValue(string[] arr, int lenght)
     return k;
 }
 
+string[] Arr = CreateArr();
+
+string[] newArr = new string[CountingShortValue(Arr, 3)];
+
+int k = 0;
+for (int i = 0; i < Arr.Length; i++)
+    if (Arr[i].Length <= 3)
+        newArr[k] = Arr[i];
+        k++;
+
+System.Console.WriteLine();
+System.Console.WriteLine("Результат работы программы:");
+System.Console.WriteLine($"[{string.Join(", ", Arr)}] → [{string.Join(", ", newArr)}]");
